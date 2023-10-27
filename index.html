@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Sales Interface</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Used Cars Available</h1>
+        <div class="filter-section">
+            <label for="year">Year (e.g. 2005 – 2012):</label>
+            <input type="range" id="year" name="year" min="2005" max="2022">
+            <select id="make">
+                <!-- Options will be populated with JS -->
+            </select>
+            <label for="mileage">Max Mileage:</label>
+            <input type="number" id="mileage">
+            <label for="price">Price Range:</label>
+            <input type="number" id="min-price" placeholder="Min Price">
+            <input type="number" id="max-price" placeholder="Max Price">
+            <select id="color">
+                <!-- Options will be populated with JS -->
+            </select>
+            <button id="filter-button">Filter</button>
+        </div>
+        <div class="cars-list">
+            <!-- Car cards will be populated with JS -->
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
