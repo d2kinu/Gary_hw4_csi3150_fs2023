@@ -1,6 +1,4 @@
-// Assuming usedCars is imported here. Since you're using module.exports, this is a Node.js context.
-// If this script is to be run in the browser, we'll need to adjust this.
-import usedCars from './usedCars';
+import usedCars from './usedCars.js';
 
 // DOM elements
 const makeDropdown = document.getElementById('make');
@@ -57,4 +55,20 @@ filterButton.addEventListener('click', () => {
     const filteredCars = usedCars.filter(car => {
         return (!selectedMake || car.make === selectedMake) &&
                (!selectedColor || car.color === selectedColor) &&
-               (!selectedYear || car.year === selected)
+               (!selectedYear || car.year === selectedYear) &&
+               (!selectedMileage || car.mileage <= selectedMileage) &&
+               (!selectedMinPrice || car.price >= selectedMinPrice) &&
+               (!selectedMaxPrice || car.price <= selectedMaxPrice);
+    });
+
+    if (filteredCars.length === 0) {
+        carsList.innerHTML = '<p>No cars match the criteria.</p>';
+    } else {
+        carsList.innerHTML = filteredCars.map(car => renderCarCard(car)).join('');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  
+});
