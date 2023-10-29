@@ -23,7 +23,7 @@ const populateDropdown = (dropdown, values) => {
 const renderCarCard = (car) => {
   return `
         <div class="car-card">
-        <img src=${car.make} - ${car.model}" alt="${car.make} ${car.model}" class="car-image">
+        <img src="${car.image}" >
             <h2>${car.make} ${car.model}</h2>
             <p>Year: ${car.year}</p>
             <p>Mileage: ${car.mileage}</p>
