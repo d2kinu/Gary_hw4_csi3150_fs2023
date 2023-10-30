@@ -63,6 +63,14 @@ filterButton.addEventListener("click", () => {
       (!selectedMaxPrice || car.price <= selectedMaxPrice)
     );
   });
+  console.log(
+    selectedColor,
+    selectedMake,
+    selectedYear,
+    selectedMileage,
+    selectedMinPrice,
+    selectedMaxPrice
+  );
 
   if (filteredCars.length === 0) {
     carsList.innerHTML = "<p>No cars match the criteria.</p>";
