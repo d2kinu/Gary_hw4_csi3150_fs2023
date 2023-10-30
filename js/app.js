@@ -63,19 +63,12 @@ filterButton.addEventListener("click", () => {
       (!selectedMaxPrice || car.price <= selectedMaxPrice)
     );
   });
-  console.log(
-    selectedColor,
-    selectedMake,
-    selectedYear,
-    selectedMileage,
-    selectedMinPrice,
-    selectedMaxPrice
-  );
+  usedCars = filteredCars;
 
   if (filteredCars.length === 0) {
     carsList.innerHTML = "<p>No cars match the criteria.</p>";
   } else {
-    carsList.innerHTML = filteredCars.map((car) => renderCarCard(car)).join("");
+    carsList.innerHTML = usedCars.map((car) => renderCarCard(car)).join("");
   }
 });
 
